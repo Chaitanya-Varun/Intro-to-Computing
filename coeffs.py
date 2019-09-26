@@ -7,6 +7,12 @@ def dir_vec(A,B):
 def norm_vec(A,B):
   return np.matmul(omat, dir_vec(A,B))
 
+# defining matrix for finding conjugate
+cjt = np.array([[1,0],[0,-1]])
+
+def conj_no(z):
+	return np.matmul(cjt,z)
+
 #Generate line points
 def line_gen(A,B):
   len =10
@@ -34,5 +40,10 @@ dvec = np.array([-1,1])
 omat = np.array([[0,1],[-1,0]]) 
 AB =np.vstack((A,B)).T
 
-
+#defining the arguement
+def arg_vec(A):
+	theta=math.acos(A[0]/np.linalg.norm(A))
+	return theta
+#defining origin
+O=np.array([0,0])
 
